@@ -3,7 +3,7 @@ import GunModel from "./GunModel.js";
 export default class PlayerModel {
 
     constructor(health = 100, max_health = 100) {
-        this.max_speed = 100;
+        this.max_speed = 200;
         this.health = health;
         this.max_health = max_health;
         this.gun = new GunModel();
@@ -18,6 +18,17 @@ export default class PlayerModel {
         }
         this.max_speed = amount;
     }
+
+    add_max_speed(amount) {
+    if ((typeof amount) != "number") {
+            throw new Error('Speed in PlayerModel.change_speed must be a number.');
+        }
+        if (amount < 0) {
+            amount = 0;
+        }
+        this.max_speed += amount;
+    }
+
 
     damage(amount) {
         if (amount < 0) {

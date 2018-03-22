@@ -2,7 +2,7 @@ export default class GameOver {
 
 
     create() {
-
+	this.gameOver = this.add.tileSprite(0, 0, 1024, 768, 'gameOver');
     }
 
     update() {

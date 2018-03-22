@@ -23,6 +23,10 @@ export default class Preload {
         //do all your loading here
         //this.load.image('player', 'assets/images/player.png'); //width and height of sprite
         this.load.image('enemy', 'assets/images/enemy.png');
+	this.load.image('health', 'assets/images/healthPowerUp.png');
+	this.load.image('speed', 'assets/images/speedboostPowerUp.png');
+	this.load.image('startScreenBg', 'assets/images/startScreenBg.JPG');
+	this.load.image('gameOver', 'assets/images/GameOver.jpg');
         this.load.image('explosion', 'assets/images/explosion.png');
 
         this.load.spritesheet('player', 'assets/images/gunbot.png', 214, 269); //width and height of sprite

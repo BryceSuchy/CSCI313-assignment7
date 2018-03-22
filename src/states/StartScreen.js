@@ -3,6 +3,7 @@ export default class StartScreen {
 
     create() {
         console.log("Create?");
+	this.startScreenBg = this.add.tileSprite(0, 0, 1024, 768, 'startScreenBg');
     }
 
     update() {
