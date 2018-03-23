@@ -25,6 +25,7 @@ export default class Preload {
         this.load.image('enemy', 'assets/images/enemy.png');
 	this.load.image('health', 'assets/images/healthPowerUp.png');
 	this.load.image('speed', 'assets/images/speedboostPowerUp.png');
+	this.load.image('ammo', 'assets/images/bulletsPowerUp.png');
 	this.load.image('startScreenBg', 'assets/images/startScreenBg.JPG');
 	this.load.image('gameOver', 'assets/images/GameOver.jpg');
         this.load.image('explosion', 'assets/images/explosion.png');

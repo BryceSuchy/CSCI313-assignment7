@@ -5,6 +5,7 @@ import NumberBox from "../prefabs/NumberBox.js";
 import HealthBar from "../prefabs/HealthBar.js";
 import HealthPowerUp from "../prefabs/HealthPowerUp.js";
 import SpeedPowerUp from "../prefabs/SpeedPowerUp.js";
+import AmmoPowerUp from "../prefabs/AmmoPowerUp.js";
 
 
 
@@ -33,7 +34,7 @@ export default class Game extends Phaser.State {
         this.player = new Player(this.game, 0, 0, this.bullets);
         this.game.add.existing(this.player);
 
-        //add a few enemeis..
+        //add a few enemies..
         this.enemies = this.add.group();
         for (let i = 0; i < 10; i++) {
             let enemy = new Enemy(this.game, this.game.width + 100 + (Math.random() * 400), Math.random() * this.game.height, this.enemyBullets);
@@ -43,11 +44,14 @@ export default class Game extends Phaser.State {
 	//add a few powerups..
         this.healthpowerups = this.add.group();
 	this.speedpowerups = this.add.group();
+	this.ammopowerups = this.add.group();
 	for (let i = 0; i < 1; i++) {
             let healthpowerup = new HealthPowerUp(this.game, this.game.width + 100 + (Math.random() * 400), Math.random() * this.game.height, this.enemyBullets);
             this.healthpowerups.add(healthpowerup);
 	    let speedpowerup = new SpeedPowerUp(this.game, this.game.width + 100 + (Math.random() * 400), Math.random() * this.game.height, this.enemyBullets);
             this.speedpowerups.add(speedpowerup);
+	    let ammopowerup = new AmmoPowerUp(this.game, this.game.width + 100 + (Math.random() * 400), Math.random() * this.game.height, this.enemyBullets);
+            this.ammopowerups.add(ammopowerup);
         }
 
         //add the explosions
@@ -93,10 +97,14 @@ export default class Game extends Phaser.State {
         } else if(Math.random() < this.PUspawnChance) {
 	    let speedpowerup = new SpeedPowerUp(this.game, this.game.width + 100 + (Math.random() * 400), Math.random() * this.game.height, this.enemyBullets);
             this.speedpowerups.add(speedpowerup);
+	}else if(Math.random() < this.PUspawnChance) {
+	    let ammopowerup = new AmmoPowerUp(this.game, this.game.width + 100 + (Math.random() * 400), Math.random() * this.game.height, this.enemyBullets);
+            this.ammopowerups.add(ammopowerup);
 	}
 	
 	this.physics.arcade.overlap(this.player, this.healthpowerups, this.healPlayer, null, this);
 	this.physics.arcade.overlap(this.player, this.speedpowerups, this.speedBoost, null, this);
+	this.physics.arcade.overlap(this.player, this.ammopowerups, this.addAmmo, null, this);
 
     }
 
@@ -116,6 +124,11 @@ export default class Game extends Phaser.State {
 
     speedBoost(playerRef, powerUpsRef) {
     	this.player.playerModel.add_max_speed(50);
+	powerUpsRef.kill();
+    }
+
+    addAmmo(playerRef, powerUpsRef) {
+	this.player.bullets += 5;
 	powerUpsRef.kill();
     }
 
