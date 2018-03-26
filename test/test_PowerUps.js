@@ -26,10 +26,6 @@ describe("HealthPowerUp", function () {
     	assert.equal(health.y, 0.04997916927067833);    
     });
 
-    it("Health Power Up grants max health", function () {
-        
-    });
-
 });
 
 describe("AmmoPowerUp", function () {
@@ -54,10 +50,6 @@ describe("AmmoPowerUp", function () {
 	ammo.y = 0;
         ammo.update();
         assert.equal(ammo.y, 0.04997916927067833);
-    });
-
-    it("Ammo Power Up grants ammo to the player", function () {
-        
     });
 
 });
@@ -86,8 +78,5 @@ describe("SpeedPowerUp", function () {
         assert.equal(speed.y, 0.04997916927067833);
     });
 
-    it("Speed Power Up grants more speed", function () {
-        
-    });
 
 });
