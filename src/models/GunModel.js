@@ -9,7 +9,10 @@ export default class GunModel {
 
     fire() {
         this.lastFire = Date.now();
-        this.bullets -= 1;
+        if (this.bullets > 0)
+        {
+            this.bullets -= 1;
+        }
     }
 
     canBeFired() {
@@ -18,5 +21,17 @@ export default class GunModel {
         } else {
             return false;
         }
+    }
+    //input a value to change fireRate,
+    canBeFired(fireRateTime) {
+        if (Date.now() - this.lastFire >= fireRateTime && this.bullets > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    addBullets(bulletAmount) {
+        this.bullets += bulletAmount;
     }
 }

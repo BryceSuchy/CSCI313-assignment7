@@ -20,6 +20,9 @@
     Phaser.Sprite.prototype.game = sinon.stub();
     Phaser.Sprite.prototype.game.input = sinon.stub();
     Phaser.Sprite.prototype.game.input.keyboard = sinon.stub();
+    Phaser.Sprite.prototype.game.physics = sinon.stub();
+    Phaser.Sprite.prototype.game.physics.enable = sinon.stub();
+	
 
     //Can modify and set these values to fake a key press
     let cursors = Phaser.Sprite.prototype.game.input.keyboard.createCursorKeys = sinon.stub();

@@ -7,6 +7,9 @@ export default class PlayerModel {
         this.health = health;
         this.max_health = max_health;
         this.gun = new GunModel();
+        this.fireRate = 500;
+        this.lastToggle = Date.now() - 500; //So that we can switch fire modes
+        this.fireMode = 0;
     }
 
     change_max_speed(amount) {
@@ -46,5 +49,40 @@ export default class PlayerModel {
             this.health = this.max_health;
         }
     }
+   canBeToggled() {
+    
+        if (Date.now() - this.lastToggle >= this.fireRate) {
+            return true;
+        } else {
+            return false;
+        }
+        this.lastToggle = Date.now();
+    } 
+   toggleFireMode() {
+
+        if (this.canBeToggled()) {
+            if (this.fireMode == 3) {
+                this.fireMode = 0;
+            } else if (this.fireMode != 3) {
+                this.fireMode += 1;
+            }
+            if (this.fireMode == 0) {
+                console.log("0");
+            } else if (this.fireMode == 1) {
+                console.log("1");
+            } else if (this.fireMode == 2) {
+                console.log("2");
+            } else if (this.fireMode == 3) {
+                console.log("3");
+            } else {
+                text.setText("ERROR")
+            }
+            this.lastToggle = Date.now();
+            
+        }
+   
+
+    }
+
 
 }

@@ -3,6 +3,7 @@ import PlayerModel from "../src/models/PlayerModel.js";
 describe("Player Model", function () {
     let assert = chai.assert;
     let expect = chai.expect;
+    
 
     it("Can be created", function () {
         let model = new PlayerModel();
@@ -85,6 +86,44 @@ describe("Player Model", function () {
         let model = new PlayerModel();
         assert.equal(model.gun.constructor.name, 'GunModel');
     });
+    //toggle test
+    it('starts with the default weapon', function () {
+        let model = new PlayerModel(100,100);
+        model.fireType = 0;
+        assert.equal(model.fireType, 0);
+    });
+    it('toggle adds one', function () {
+        let model = new PlayerModel();
+        model.fireType = 1;
+        model.toggleFireMode();
+        assert.equal(model.fireType, 1);
+        console.log(model.fireType);
+    });
+    it('toggleFireMode cannot be used directly after being used', function () {
+        let model = new PlayerModel();
+        model.toggleFireMode();
+        assert.equal(model.canBeToggled(), false);
+        console.log(model.fireType);
+    });
+    it('toggleFireMode can be used 500 ms after being used', function () {
+        let clock = sinon.useFakeTimers();
+        let model = new PlayerModel();
+        model.toggleFireMode();
+        clock.tick(500);
+        assert.equal(model.canBeToggled(), true);
+        console.log(model.fireType);
+    });
+    it('toggleFireMode cannot be used 499 ms after being used', function () {
+        let clock = sinon.useFakeTimers();
+        let model = new PlayerModel();
+        model.toggleFireMode();
+        clock.tick(499);
+        assert.equal(model.canBeToggled(), false);
+        console.log(model.fireType);
+    });
+
+    
+    
 
 
 });
