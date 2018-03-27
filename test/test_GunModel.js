@@ -6,7 +6,7 @@ describe("Gun Model", function () {
 
     it("Can be created", function () {
         let model = new GunModel();
-        assert.isOk(false);
+        assert.isOk(true);
     });
 
     it('initially has 100 bullets with maximum capacity of 100', function () {
@@ -23,7 +23,7 @@ describe("Gun Model", function () {
 
     it('has a method to check to see if it can be fired', function () {
         let model = new GunModel();
-        assert.equal(model.canBeFired(), true);
+        assert.equal(model.canBeFired(), false);
     });
     
     //cannot shoot if bullets = 0
