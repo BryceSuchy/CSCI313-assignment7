@@ -3,7 +3,7 @@ import PlayerModel from "../src/models/PlayerModel.js";
 
 describe("Gun Model", function () {
     let chai = require("chai");
-    let sinon = requre("sinon");
+    let sinon = require("sinon");
     let assert = chai.assert;
 
     it("Can be created", function () {
