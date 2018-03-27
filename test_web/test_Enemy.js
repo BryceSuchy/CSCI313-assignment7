@@ -1,8 +1,6 @@
 import Enemy from "../src/prefabs/Enemy.js";
 
 describe("Enemy", function () {
-    let chai = require("chai");
-    let sinon = requre("sinon");
     let assert = chai.assert;
     let enemy;
 //Test fixture, create the same kind of player before each test

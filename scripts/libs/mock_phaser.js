@@ -1,3 +1,5 @@
+let sinon = require("sinon");
+
 (function () {
     var root = this;
     var Phaser = Phaser || function () { };    // jshint ignore:line
@@ -73,4 +75,6 @@
 }).call(this);
 
 //After creating the Phaser mock object, attach it to the window so future methods can use it.
-sinon.stub(window, 'Phaser');
+//sinon.stub(window, 'Phaser');
+
+global.Phaser = require('./mock_phaser.js');

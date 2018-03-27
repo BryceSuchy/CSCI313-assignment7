@@ -3,9 +3,6 @@ import AmmoPowerUp from "../src/prefabs/AmmoPowerUp.js";
 import SpeedPowerUp from "../src/prefabs/SpeedPowerUp.js";
 
 describe("HealthPowerUp", function () {
-    let chai = require("chai");
-    let sinon = requre("sinon");
-
     let assert = chai.assert;
     let health;
     
