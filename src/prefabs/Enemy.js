@@ -34,7 +34,7 @@ export default class Enemy extends Phaser.Sprite {
     }
 
     update() {
-	//this.enemyPath = Math.floor((Math.random() * 3) + 1);
+	
 	if(this.enemyPath == 1) {
 		//this.x = this.x;
 		this.bounceTick += .02;
@@ -45,7 +45,6 @@ export default class Enemy extends Phaser.Sprite {
 			this.body.velocity.x = -175;
 		}
 		 
-		//this.y = Math.floor((Math.random() * 10) - 10);
 	}else if(this.enemyPath == 2) { 
 		this.y += Math.sin(this.bounceTick) * 1 + Math.cos(this.bounceTick) * 1;
 
