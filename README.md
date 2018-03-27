@@ -19,3 +19,7 @@ o You will also need to change some of the old tests.
  (1) Add background graphics for the Title screen
  (1) Add background graphic for the GameOver screens
  (1) Crop the images so the collisions are less "buggy
+
+[![Build Status](https://travis-ci.com/NDSU-CSCI313-Borchert/assignment-7-answer-key.svg?token=qpqhpRV8KyFxVx7zemCh&branch=master)](https://travis-ci.com/NDSU-CSCI313-Borchert/assignment-7-answer-key)
+
+https://travis-ci.com/NDSU-CSCI313-Borchert/assignment-7-answer-key.svg?token=qpqhpRV8KyFxVx7zemCh&branch=master
