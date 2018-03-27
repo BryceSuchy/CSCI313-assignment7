@@ -128,8 +128,9 @@ export default class Game extends Phaser.State {
     }
 
     addAmmo(playerRef, powerUpsRef) {
-	this.player.bullets += 5;
-	powerUpsRef.kill();
+	//this.player.playerModel.bullets += 20;
+    this.player.playerModel.gun.addBullets(20);
+    powerUpsRef.kill();
     }
 
     healPlayer(playerRef, powerUpsRef) {

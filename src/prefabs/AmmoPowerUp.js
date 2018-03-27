@@ -8,7 +8,6 @@ export default class AmmoPowerUp extends Phaser.Sprite {
 
         this.body.velocity.x = -175;
         this.bounceTick = Math.random() * 2;
-	
         this.bulletLayer = bulletLayer;
 
         this.outOfBoundsKill = true;

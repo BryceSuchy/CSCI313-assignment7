@@ -1,11 +1,12 @@
 import GunModel from "../src/models/GunModel.js";
+import PlayerModel from "../src/models/PlayerModel.js";
 
 describe("Gun Model", function () {
     let assert = chai.assert;
 
     it("Can be created", function () {
         let model = new GunModel();
-        assert.isOk(true);
+        assert.isOk(false);
     });
 
     it('initially has 100 bullets with maximum capacity of 100', function () {
@@ -20,32 +21,22 @@ describe("Gun Model", function () {
         assert.equal(model.max_bullets, 25);
     });
 
-    it('removes one bullet when fired', function () {
-        let model = new GunModel();
-        model.fire();
-        assert.equal(model.bullets, 99);
-    });
-
     it('has a method to check to see if it can be fired', function () {
         let model = new GunModel();
         assert.equal(model.canBeFired(), true);
     });
-
-    it('can not be fired again if it has been fired immediately before', function () {
+    
+    //cannot shoot if bullets = 0
+    it ('bullet cannot be fired if bullet = 0', function () {
         let model = new GunModel();
-        model.fire();
+        model.bullets = 0;
         assert.equal(model.canBeFired(), false);
     });
-
-    it('can be fired 500 milliseconds after the last firing', function () {
-        let clock = sinon.useFakeTimers();
+    //cannot shoot if max_bullets = 0
+    it ('bullet cannot be fired if max_bullet = 0', function () {
         let model = new GunModel();
-        model.fire();
-        //Stub the clock ahead by 500 milliseconds
-        clock.tick(500);
-
-        assert.equal(model.canBeFired(), true);
-        clock.restore()
+        model.max_bullets = 0;
+        assert.equal(model.canBeFired(), false);
     });
-
+    
 });
