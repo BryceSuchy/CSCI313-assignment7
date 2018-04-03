@@ -1,17 +1,17 @@
 import Player from "../src/prefabs/Player.js";
 import PlayerModel from "../src/models/PlayerModel.js";
-
-
-describe("Player", function () {
     let chai = require("chai");
     let sinon = require("sinon");
 
     let assert = chai.assert;
     let expect = chai.expect;
+
+describe("Player", function () {
+    
     let player;
 
     //Test fixture, create the same kind of player before each test
-    //beforeEach(function() {
+    beforeEach(function() {
         // Stubbing out the features not used in constructor
         let game = sinon.stub();
         game.physics = sinon.stub();
@@ -19,7 +19,7 @@ describe("Player", function () {
         let bullets = sinon.stub();
 
         player = new Player(game, 0, 0, bullets);
-    //});
+    });
 
     it("Can be created", function () {
         //We now build the player before each test case
@@ -47,18 +47,18 @@ describe("Player", function () {
         player.cursors.left.isDown = false;
     });
 //tests by cal
-    it('toggle method changes the fireMode to the next one', function () {
-        player = new Player(game, 0, 0, bullets);
-        model.PlayerModel.fireMode() = 0;
-        model.PlayerModel.toggleFireMode();
-        assert.equal(model.PlayerModel.fireMode, 1);
-    });
-    it('removes three bullets while in triple fire mode', function () {
-        let model = new PlayerModel();
-        model.fireMode() = 2;
-        model.fire();
-        assert.equal(model.bullets, 99);
-    });
+//    it('toggle method changes the fireMode to the next one', function () {
+//        player = new Player(game, 0, 0, bullets);
+//        model.PlayerModel.fireMode() = 0;
+//        model.PlayerModel.toggleFireMode();
+//        assert.equal(model.PlayerModel.fireMode, 1);
+//    });
+//    it('removes three bullets while in triple fire mode', function () {
+//        let model = new PlayerModel();
+//        model.fireMode() = 2;
+//        model.fire();
+//        assert.equal(model.bullets, 99);
+//    });
 //checks to see if firemodes reduce bullets correctly
     it('firing fireMode 1 reduces bullet by one', function () {
         let model = new PlayerModel();

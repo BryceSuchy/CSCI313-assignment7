@@ -1,12 +1,12 @@
 import HealthPowerUp from "../src/prefabs/HealthPowerUp.js";
 import AmmoPowerUp from "../src/prefabs/AmmoPowerUp.js";
 import SpeedPowerUp from "../src/prefabs/SpeedPowerUp.js";
+let chai = require("chai");
+let assert = chai.assert;
+let sinon = require("sinon");
 
 describe("HealthPowerUp", function () {
-    let chai = require("chai");
-    let sinon = require("sinon");
 
-    let assert = chai.assert;
     let health;
     
     let game = sinon.stub();
@@ -32,7 +32,6 @@ describe("HealthPowerUp", function () {
 });
 
 describe("AmmoPowerUp", function () {
-    let assert = chai.assert;
     let ammo;
     
     let game = sinon.stub();
@@ -58,7 +57,6 @@ describe("AmmoPowerUp", function () {
 });
 
 describe("SpeedPowerUp", function () {
-    let assert = chai.assert;
     let speed;
     
     let game = sinon.stub();

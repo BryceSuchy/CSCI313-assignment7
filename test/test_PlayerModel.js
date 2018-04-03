@@ -1,11 +1,13 @@
 import PlayerModel from "../src/models/PlayerModel.js";
 
-describe("Player Model", function () {
-    let chai = require("chai");
+let chai = require("chai");
     let sinon = require("sinon");
 
     let assert = chai.assert;
     let expect = chai.expect;
+
+
+describe("Player Model", function () {
     
 
     it("Can be created", function () {

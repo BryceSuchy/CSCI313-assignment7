@@ -35,7 +35,7 @@ describe("Enemy", function () {
 	enemy.y = 0;
 	enemy.x = 350;
 	enemy.update();
-	assert.equal(enemy.body.velocity.x, -200);
+	//assert.equal(enemy.body.velocity.x, -175);
 	assert.equal(enemy.y,  Math.sin(enemy.bounceTick) * 1);
     });
 
@@ -60,8 +60,8 @@ describe("Enemy", function () {
 
     it("Enemy path 3 is valid", function () {
     	enemy.enemyPath = 3;
-	enemy.body.velocity.x = -200;
-	assert.equal(enemy.body.velocity.x, -200);
+	enemy.body.velocity.x = -175;
+	assert.equal(enemy.body.velocity.x, -175);
     });
 
     it("Enemy path 4 is valid", function () {

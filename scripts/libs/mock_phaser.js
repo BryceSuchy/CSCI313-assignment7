@@ -24,6 +24,8 @@ let sinon = require("sinon");
     Phaser.Sprite.prototype.game.input.keyboard = sinon.stub();
     Phaser.Sprite.prototype.game.physics = sinon.stub();
     Phaser.Sprite.prototype.game.physics.enable = sinon.stub();
+    Phaser.Sprite.prototype.game.add = sinon.stub();
+    Phaser.Sprite.prototype.game.add.text = sinon.stub();
 
     Phaser.Utils = sinon.stub();
     Phaser.Utils.chanceRoll = sinon.stub();

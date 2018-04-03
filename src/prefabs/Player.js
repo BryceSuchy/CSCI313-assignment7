@@ -24,8 +24,8 @@ export default class Player extends Phaser.Sprite {
             y: 100
         };
         var style = { font: "25px Comic Sans MS", fill: "#FFFFFF" };
-        var text = "'T' to Change Weapon	Type: Default      Ammo: " + this.playerModel.gun.bullets
-        this.display_Text = this.game.add.text(400, 25, text, style);
+        var topText = "'T' to Change Weapon	Type: Default      Ammo: " + this.playerModel.gun.bullets
+        this.display_Text = this.game.add.text(400, 25, topText, style);
         this.cursors = this.game.input.keyboard.createCursorKeys();
         this.fireButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         this.toggleButton = this.game.input.keyboard.addKey(Phaser.Keyboard.T);
