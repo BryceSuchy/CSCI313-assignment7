@@ -1,7 +1,7 @@
 # NDSU-CSCI313-Assignment7Template
 Template based on the shoot em up game from Travis Faas book An Introduction to HTML5 Game Development with Phaser.JS
 
-https://travis-ci.com/NDSU-CSCI313-Borchert/assignment-7-answer-key.svg?token=DvhLrGPQNijq2BpqXZ9G&branch=master
+[![Build Status](https://travis-ci.com/NDSU-CSCI313-Borchert/assignment-7-answer-key.svg?token=DvhLrGPQNijq2BpqXZ9G&branch=master)](https://travis-ci.com/NDSU-CSCI313-Borchert/assignment-7-answer-key)
 
 
 We did these bonus things
